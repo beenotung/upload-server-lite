@@ -17,6 +17,7 @@
   "bugs": {
     "url": "https://github.com/beenotung/upload-server-lite/issues"
   },
+  "main": "server.js",
   "bin": {
     "upload-server-lite": "server.js"
   },
