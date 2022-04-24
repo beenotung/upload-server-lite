@@ -1,10 +1,29 @@
 {
   "name": "upload-server-lite",
-  "description": "",
   "version": "1.0.0",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Minimal web server to accept file upload over the network",
+  "keywords": [
+    "file upload",
+    "cli",
+    "server"
+  ],
+  "author": {
+    "name": "Beeno Tung",
+    "email": "aabbcc1241@yahoo.com.hk",
+    "url": "https://beeno-tung.surge.sh"
+  },
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beenotung/upload-server-lite.git"
+  },
+  "homepage": "https://github.com/beenotung/upload-server-lite#readme",
+  "bugs": {
+    "url": "https://github.com/beenotung/upload-server-lite/issues"
+  },
+  "bin": {
+    "upload-server-lite": "server.js"
+  },
   "scripts": {
     "start": "node server.js",
     "format": "prettier --write server.js"
