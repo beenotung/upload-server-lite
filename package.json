@@ -26,7 +26,6 @@
     "format": "prettier --write server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "formidable": "^2.0.1",
     "listening-on": "^2.0.5"
   },
