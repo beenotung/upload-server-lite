@@ -22,7 +22,7 @@ server = http.createServer((req, res) => {
     res.end(`<html><body>
 <form action="/" method="post" enctype="multipart/form-data">
   <input type="file" name="file" multiple/>
-  <input type="submit">
+  <input type="submit" value="Upload">
 </form>
 </body></html>
 `)
