@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 http = require("http")
 formidable = require("formidable")
 listeningOn = require("listening-on")
