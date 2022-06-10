@@ -27,10 +27,6 @@ listening on http://127.0.0.1:8100 (lo)
 listening on http://192.168.1.3:8100 (wlp3s0)
 ```
 
-You can specify the port from argument or env, e.g.:
-- `npx upload-server-lite 8080`
-- `PORT=8080 npx upload-server-lite`
-
 **Upload from client**:
 
 If the GUI is available, you use a web browser to upload files through the url printed form the server cli.
@@ -53,6 +49,23 @@ For example:
   }
 }
 ```
+
+### Server Options
+
+Format: `npx upload-server-lite [port] [maxFileSize]`
+
+To specify port:
+
+- `npx upload-server-lite 8080`
+
+To specify maxFileSize:
+
+- `npx upload-server-lite 200K`
+
+To specify port and maxFileSize:
+
+- `npx upload-server-lite 8080 10M`
+- `npx upload-server-lite 2G 8080`
 
 ## License
 
