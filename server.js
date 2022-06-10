@@ -46,7 +46,10 @@ server = http.createServer((req, res) => {
   res.end("invalid method: " + req.method + "\n")
 })
 
-port = 8100
+port = +process.argv[2]
+  || +process.env.PORT
+  || 8100
+
 server.listen(port, () => {
   listeningOn.print(port)
 })
