@@ -19,7 +19,7 @@
   },
   "main": "server.js",
   "bin": {
-    "upload-server-lite": "server.js"
+    "upload-server-lite": "./server.js"
   },
   "scripts": {
     "start": "node server.js",
