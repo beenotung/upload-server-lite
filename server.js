@@ -5,13 +5,40 @@ formidable = require("formidable")
 listeningOn = require("listening-on")
 fs = require("fs")
 
+port = +process.env.PORT
+sizeValue = 100
+sizeUnit = "G"
 uploadDir = "uploads"
+
+units = {}
+units["B"] = 1024 ** 0
+units["K"] = 1024 ** 1
+units["M"] = 1024 ** 2
+units["G"] = 1024 ** 3
+units["T"] = 1024 ** 4
+units["P"] = 1024 ** 5
+
+for (let i = 2; i < process.argv.length; i++) {
+  let arg = process.argv[i]
+  let value = parseFloat(arg)
+  let unit = arg.replace(String(value), "").slice(0, 1) || "B"
+  let scale = units[unit]
+  if (value && scale) {
+    sizeValue = value
+    sizeUnit = unit
+  } else {
+    port = parseInt(arg) || port
+  }
+}
+
+maxFileSize = sizeValue * units[sizeUnit]
+port = +port || 8100
 
 fs.mkdirSync(uploadDir, { recursive: true })
 
 form = formidable({
   uploadDir,
-  maxFileSize: 100 * 1024 ** 3,
+  maxFileSize,
   keepExtensions: true,
   filename: (name, ext, part, form) => {
     return part.originalFilename
@@ -46,10 +73,7 @@ server = http.createServer((req, res) => {
   res.end("invalid method: " + req.method + "\n")
 })
 
-port = +process.argv[2]
-  || +process.env.PORT
-  || 8100
-
 server.listen(port, () => {
   listeningOn.print(port)
+  console.log("maxFileSize:", sizeValue.toLocaleString(), sizeUnit)
 })
