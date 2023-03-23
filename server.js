@@ -48,13 +48,20 @@ form = formidable({
 server = http.createServer((req, res) => {
   if (req.method === "GET") {
     res.setHeader("Content-Type", "text/html")
-    res.end(`<html><body>
-<form action="/" method="post" enctype="multipart/form-data">
-  <input type="file" name="file" multiple/>
-  <input type="submit" value="Upload">
-</form>
-</body></html>
-`)
+    res.end(`<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" multiple/>
+    <input type="submit" value="Upload">
+  </form>
+</body>
+</html>`)
     return
   }
   if (req.method === "POST") {
