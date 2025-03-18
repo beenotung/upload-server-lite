@@ -1,6 +1,6 @@
 {
   "name": "upload-server-lite",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Minimal web server to accept file upload over the network",
   "keywords": [
     "file upload",
