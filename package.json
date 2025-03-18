@@ -21,6 +21,9 @@
   "bin": {
     "upload-server-lite": "./server.js"
   },
+  "files": [
+    "server.js"
+  ],
   "scripts": {
     "start": "node server.js",
     "format": "prettier --write server.js"
