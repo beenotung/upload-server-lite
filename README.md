@@ -52,19 +52,36 @@ For example:
 
 ### Server Options
 
-Format: `npx upload-server-lite [port] [maxFileSize]`
+Format: `npx upload-server-lite [port] [maxFileSize] [secret]`
 
-To specify port:
+#### To specify port:
 
 - `npx upload-server-lite 8080`
 
-To specify maxFileSize:
+Remark: The `PORT` environment variable is also supported.
+
+#### To specify maxFileSize:
 
 - `npx upload-server-lite 200K`
 
-To specify port and maxFileSize:
+Example format of max file size:
 
-- `npx upload-server-lite 8080 10M`
+- `200` or `200B` => 200 bytes
+- `300K` => 300 kilobytes
+- `10M` => 10 megabytes
+- `2G` => 2 gigabytes
+- `1T` => 1 terabyte
+- `2P` => 2 petabytes
+
+#### To specify access secret:
+
+- `npx upload-server-lite --secret=any-long-string`
+
+Remark: The `SECRET` environment variable is also supported.
+
+#### To specify any options in any order:
+
+- `npx upload-server-lite --secret=any-long-string 8080 10M`
 - `npx upload-server-lite 2G 8080`
 
 ## License
